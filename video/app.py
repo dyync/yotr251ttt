@@ -21,6 +21,7 @@ import scipy.spatial
 import random
 import math
 from sklearn.cluster import KMeans
+from pathlib import Path
 
 # Alternative video export implementation
 try:
@@ -116,7 +117,10 @@ def generate_image(
         processing_time = time.time() - start_time
         print(f'[{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}] [generate_image] finished generating image! Saved to {output_path} in {processing_time:.2f}s')
         print(f'[{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}] [generate_image] changing output_path {output_path}')
-        output_path = f'/usr/src/app/video/{output_path}'
+        base_dir = Path("/usr/src/app/video")
+
+        output_path = base_dir / output_path
+        # output_path = f'/usr/src/app/video/{output_path}'
         # output_path = f'/image/{output_path}'
         # output_path = f'{output_path}'
         print(f'[{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}] [generate_image] output_path changed! ->  {output_path}')
