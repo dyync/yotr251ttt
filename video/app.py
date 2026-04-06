@@ -111,7 +111,9 @@ def generate_image(
 
         image.save(output_path)
         # save to temp for api
-        tmp_output_path = f'/tmp/{output_path}'
+        tmp_dir = Path("/tmp")
+
+        tmp_output_path = tmp_dir / output_path
         image.save(tmp_output_path)
 
         processing_time = time.time() - start_time

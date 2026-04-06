@@ -5,7 +5,7 @@ huggingface_hub
 psutil
 tqdm
 numpy
-torch
+--extra-index-url https://download.pytorch.org/whl/cu121
 torchvision
 diffusers
 transformers
